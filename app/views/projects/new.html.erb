@@ -1,0 +1,12 @@
+<h2>Neues Projekt anlegen:</h2>
+
+<%= form_for(@project) do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.select :employee_id, @employees.map { |e| [e.name, e.id] }%>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,39 @@
+<div class="wrapper">
+    
+    <div class="employees">
+        <h2> Alle Mitarbeiter <span class="badge badge-secondary"><%= @employees.count %></span></h2>
+        <p><%= link_to 'Neuen Mitarbeiter anlegen', new_employee_path %></p>
+
+        <ul class="list-group list">
+            <% @employees.each do |employee| %>
+                <li class="list-group-item">
+                    <%= link_to employee.name, employee_path(employee) %>
+                    <div class="actions">
+                        <%= link_to 'Edit', edit_employee_path(employee), :class => "btn btn-primary" %>
+                        <%= link_to 'Delete', employee_path(employee), method: "DELETE", :class => "btn btn-primary" %>
+                    </div>
+                </li>
+            <% end %>
+        </ul>    
+    </div>
+
+    <br/>
+
+    <div class="projects">
+        <h2> Alle Projekte <span class="badge badge-secondary"><%= @projects.count %></span></h2>
+            <p><%= link_to 'Neues Projekt anlegen', new_project_path %></p>
+
+            <ul class="list-group list">
+                <% @projects.each do |project| %>
+                    <li class="list-group-item">
+                        <%= link_to project.name, project_path(project) %>
+                        <div class="actions">
+                            <%= link_to 'Edit', edit_project_path(project), :class => "btn btn-primary" %>
+                            <%= link_to 'Delete', project_path(project), method: "DELETE", :class => "btn btn-primary" %>
+                        </div>
+                    </li>
+                <% end %>
+            </ul>    
+        </div>
+    </div>
+</div>

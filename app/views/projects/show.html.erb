@@ -1,0 +1,22 @@
+<h2>Projekt: <%= @project.name %></h2>
+Leitender Mitarbeiter: <%= @project.employee.name %>
+
+<% unless @project.states.empty? %>
+    <h2>Aktueller Status</h2>
+    <ul>
+        <% @project.states.each do |state|%>
+        <li><%= state.text %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+<h2>Status hinzufügen</h2>
+<%= form_for [@project, @state] do |f| %>
+    <div>
+        <%= f.text_field :text %>
+    </div>
+    <div>
+        <%= f.submit %>
+    </div>
+<% end %>
+

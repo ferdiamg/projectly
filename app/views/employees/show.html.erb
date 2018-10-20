@@ -1,0 +1,6 @@
+<h2><%= @employee.name %></h2>
+<p><%= @employee.email %></p>
+<br/>
+<% @employee.projects.each do |project| %>
+  <%= project.name %>
+<% end %>

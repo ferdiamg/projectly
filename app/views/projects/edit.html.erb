@@ -1,0 +1,8 @@
+<h1> Projekt editieren</h1>
+<%= form_for(@project) do |f| %>
+    <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <%= f.submit :Submit, class: "btn btn-primary" %>
+    </div>
+<% end %>
